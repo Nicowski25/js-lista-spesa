@@ -3,16 +3,26 @@ const shoppingList = [
     'mele',
     'pere',
     'arance',
-    'limoni'
+    'limoni',
+    'uova'
 ]
 
-//prendiamo il container dalla dom
-const lista = document.getElementsByTagName('ul')
-console.log(lista);
+//prendiamo la ul dalla dom
+const ul = document.getElementById('list')
+console.log(ul);
 
 //creiamo un ciclo while col quale aggiungiamo i list item
 let i = 0
 while (i < shoppingList.length) {
-    
+    console.log(shoppingList[i]);
+    //creiamo l'elemento li alla lista
+    let li = document.createElement('li');
+    //creiamo e appendiamo nell'li il contenuto dell elemento i della lista
+    li.append(document.createTextNode(shoppingList[i]));
+    //appendiamo all'ul l'li appena creato
+    ul.append(li)
+
+    //++ per aumentare l'indice
+    i++
 }
 
